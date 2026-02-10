@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    =================================================================
+    ANDROID 12+ NATIVE SPLASH SCREEN THEME (PRODUCTION-GRADE)
+    - Apply this theme to your starting Activity in AndroidManifest.xml
+    - This provides a fast, system-level splash before the Compose UI loads.
+
+    AndroidManifest.xml entry:
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:theme="@style/Theme.App.Starting" <!-- APPLY THEME HERE -->
+        ...
+    >
+        ...
+    </activity>
+    =================================================================
+    -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- REQUIRED: Set the splash screen's background color -->
+        <item name="windowSplashScreenBackground">#0A0A0B</item>
+
+        <!-- REQUIRED: Set the animated icon. Must be an AnimatedVectorDrawable. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_splash_logo</item>
+        
+        <!-- Optional: A background color for the icon. Useful for transparent icons. -->
+        <item name="windowSplashScreenIconBackgroundColor">#0A0A0B</item>
+
+        <!-- REQUIRED: Set the theme of the Activity that follows your splash screen -->
+        <item name="postSplashScreenTheme">@style/Theme.AppCompat.DayNight.NoActionBar</item>
+    </style>
+
+    <!--
+    =================================================================
+    REQUIRED DRAWABLES FOR SPLASH SCREEN
+    - Place the following two files in your `res/drawable/` directory.
+    - These are mandatory for the native splash to function correctly.
+    =================================================================
+    -->
+
+    <!--
+    FILE: res/drawable/ic_ar_logo.xml
+    (The base vector graphic for the AR monogram. This is the final state of the animation.)
+    -->
+    <!--
+    <vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="192dp"
+        android:height="192dp"
+        android:viewportWidth="192"
+        android:viewportHeight="192">
+        <path
+            android:name="a_path"
+            android:pathData="M96,32 L42,160 M96,32 L150,160 M69,112h54"
+            android:strokeWidth="12"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </vector>
+    -->
+
+
+    <!--
+    FILE: res/drawable/avd_splash_logo.xml
+    (The animated vector for the Android 12+ splash icon. It animates the stroke drawing.)
+    -->
+    <!--
+    <animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        android:drawable="@drawable/ic_ar_logo">
+        <target android:name="a_path">
+            <aapt:attr name="android:animation">
+                <objectAnimator
+                    android:duration="1200"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                    android:propertyName="trimPathEnd"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType" />
+            </aapt:attr>
+        </target>
+    </animated-vector>
+    -->
+
+</resources>

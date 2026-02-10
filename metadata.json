@@ -1,0 +1,8 @@
+{
+  "name": "ARCLS V10 BROADCAST PRO",
+  "description": "Professional Live Production System. Features: Multi-Camera Switching, Sports Graphics, Instant Replay, Social Engagement, Cloud & Mobile Operation.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
